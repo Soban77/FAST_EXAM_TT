@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAST-NUCES Exam Schedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <span class="brand-icon">◈</span>
+        <span>FAST-NUCES Exam Portal</span>
+      </div>
+      <nav class="nav" id="nav"></nav>
+    </header>
+
+    <main class="main">
+      <!-- Login -->
+      <section id="view-login" class="view active">
+        <div class="card auth-card">
+          <h1>Sign in</h1>
+          <p class="sub">Use your roll number and password</p>
+          <form id="loginForm" class="auth-form">
+            <label>Roll number</label>
+            <input type="text" id="loginRoll" placeholder="e.g. 25K-0529" autocomplete="username" required>
+            <label>Password</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password" required>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+          <p class="auth-switch">Don’t have an account? <a href="#" data-view="register">Register with roll number</a></p>
+        </div>
+      </section>
+
+      <!-- Register -->
+      <section id="view-register" class="view">
+        <div class="card auth-card">
+          <h1>Create account</h1>
+          <p class="sub">Register using your exam roll number</p>
+          <form id="registerForm" class="auth-form">
+            <label>Roll number</label>
+            <input type="text" id="registerRoll" placeholder="e.g. 25K-0529" required>
+            <span class="hint" id="registerRollHint"></span>
+            <label>Full name</label>
+            <input type="text" id="registerName" placeholder="As on exam schedule" required>
+            <label>Password</label>
+            <input type="password" id="registerPassword" placeholder="Min 6 characters" minlength="6" required>
+            <button type="submit" class="btn btn-primary">Create account</button>
+          </form>
+          <p class="auth-switch">Already have an account? <a href="#" data-view="login">Sign in</a></p>
+        </div>
+      </section>
+
+      <!-- Dashboard -->
+      <section id="view-dashboard" class="view">
+        <div class="dashboard">
+          <div class="profile-card card">
+            <div class="profile-avatar" aria-hidden="true"><span id="profileInitial">?</span></div>
+            <div class="profile-info">
+              <h2 id="profileName">—</h2>
+              <p class="profile-roll" id="profileRoll">—</p>
+            </div>
+          </div>
+          <div class="schedule-card card">
+            <h3>Exam schedule</h3>
+            <div class="table-wrap">
+              <table class="schedule-table" id="scheduleTable">
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Course</th>
+                    <th>Day</th>
+                    <th>Time</th>
+                    <th>Teacher</th>
+                    <th>Seat</th>
+                  </tr>
+                </thead>
+                <tbody id="scheduleBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>FAST-NUCES, Karachi Campus — Exam schedule lookup</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

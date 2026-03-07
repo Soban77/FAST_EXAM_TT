@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAST-NUCES Exam Admin</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <span class="brand-icon">◈</span>
+        <span>Admin Portal</span>
+      </div>
+    </header>
+
+    <main class="main">
+      <section id="adminLoginBlock" class="view active">
+        <div class="card admin-card">
+          <h1>Admin login</h1>
+          <form id="adminLoginForm" class="auth-form">
+            <label>Admin password</label>
+            <input type="password" id="adminPassword" placeholder="••••••" required>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+          <p class="message" id="adminLoginMessage"></p>
+        </div>
+      </section>
+
+      <section id="adminUploadBlock" class="hidden">
+        <div class="card admin-card">
+          <h1>Upload schedule PDF</h1>
+          <form id="uploadForm" class="upload-form">
+            <input type="file" id="pdfFile" accept=".pdf" required>
+            <input type="text" id="scheduleTitle" placeholder="Enter schedule title" required>
+            <button type="submit" class="btn btn-primary">Upload &amp; parse</button>
+          </form>
+          <p class="upload-result" id="uploadResult"></p>
+          <button type="button" class="btn btn-secondary" id="adminLogoutBtn">Sign out</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>
