@@ -1,4 +1,5 @@
-const API = window.location.origin;
+// const API = window.location.origin;
+const API = '';
 
 function getAdminToken() {
   return sessionStorage.getItem('exam_tt_admin_token');
