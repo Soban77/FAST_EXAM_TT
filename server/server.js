@@ -21,7 +21,6 @@ async function getAdminHash() {
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '..')));
 
 const PDF_SIZE_LIMIT = 50 * 1024 * 1024;
 const upload = multer({
@@ -145,6 +144,8 @@ app.get('/api/title', (req, res) => {
     res.json({ title: 'Exam Schedule' });
   }
 });
+
+app.use(express.static(path.join(__dirname, '..')));
 
 
 app.listen(PORT, () => console.log(`Exam TT server running at http://localhost:${PORT}`));
