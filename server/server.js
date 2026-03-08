@@ -153,7 +153,7 @@ app.use((req, res, next) => {
   express.static(path.join(__dirname, '..'))(req, res, next);
 });
 
-app.use(express.static(path.join(__dirname, '..')));
+// app.use(express.static(path.join(__dirname, '..')));
 
 
 app.listen(PORT, () => console.log(`Exam TT server running at http://localhost:${PORT}`));
