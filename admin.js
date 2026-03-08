@@ -15,7 +15,8 @@ function showAdminUpload(show) {
 }
 
 async function api(path, options = {}) {
-  console.log(API+path);
+  const API = window.location.origin;
+  
   const res = await fetch(API + path, {
     headers: { 'Content-Type': 'application/json', ...options.headers },
     ...options,
