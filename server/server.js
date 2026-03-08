@@ -40,8 +40,10 @@ function requireAdmin(req, res, next) {
 app.post('/api/admin/login', async (req, res) => {
   try {
     const { password } = req.body || {};
+    console.log(password);
     if (!password) return res.status(400).json({ error: 'Password required' });
     const ok = await bcrypt.compare(password, await getAdminHash());
+    console.log(ok):
     if (!ok) return res.status(401).json({ error: 'Invalid password' });
     const token = crypto.randomBytes(32).toString('hex');
     adminTokens.add(token);
