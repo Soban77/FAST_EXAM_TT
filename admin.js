@@ -15,9 +15,8 @@ function showAdminUpload(show) {
 }
 
 async function api(path, options = {}) {
-
-  let str = API+path;
-  const res = await fetch(str, {
+  
+  const res = await fetch(API + path, {
     headers: { 'Content-Type': 'application/json', ...options.headers },
     ...options,
   });
@@ -32,12 +31,12 @@ document.getElementById('adminLoginForm').addEventListener('submit', async (e) =
   const msgEl = document.getElementById('adminLoginMessage');
   msgEl.textContent = '';
   try {
-    const data = await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ password }) });
-    // const data = await fetch('https://fastexamtt-production.up.railway.app/api/admin/login', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ password: 'admin123' })
-    // });
+    // const data = await api('/api/admin/login', { method: 'POST', body: JSON.stringify({ password }) });
+    const data = await fetch('https://fastexamtt-production.up.railway.app/api/admin/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: 'admin123' })
+    });
 
     setAdminToken(data.token);
     showAdminUpload(true);
