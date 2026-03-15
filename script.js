@@ -1,4 +1,5 @@
-const API = window.location.origin;
+// Use same origin by default; set window.EXAM_TT_API (e.g. your backend URL) when frontend and API are deployed separately
+const API = typeof window !== 'undefined' && window.EXAM_TT_API ? window.EXAM_TT_API : window.location.origin;
 
 const views = {
   login: document.getElementById('view-login'),
