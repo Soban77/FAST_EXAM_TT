@@ -54,3 +54,6 @@ Exam_TT/
 ```
 
 Optional: set `ADMIN_PASSWORD` environment variable before starting the server to change the admin password (default is `admin123`).
+
+url:
+https://fastexamtt-production.up.railway.app/
